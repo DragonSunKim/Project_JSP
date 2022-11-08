@@ -1,0 +1,18 @@
+create table top(
+topNumber varchar2(10) PRIMARY KEY,
+topBrand varchar2(50),
+topName varchar2(50),
+topPrice Number
+);
+
+insert into top values('T0001', 'STANDARD', '스웨트 셔츠[블랙]', 29900);
+insert into top values('T0002', 'VIVASTUDIO', 'RETRIEVER CREWNECK [NAVY]', 69000);
+insert into top values('T0003', 'EBBETSFIELD', '베츠 어센틱 맨투맨 그레이', 69000);
+insert into top values('T0004', 'YALE', '2 TONE ARCH HOODIE BLACK', 79000);
+insert into top values('T0005', 'TAKEASY', '솔리드 옥스포드 오버셔츠', 40000);
+insert into top values('T0006', 'TAKEASY', '램스울 크루넥 오버니트(연차콜)', 54000);
+
+delete from top where topNumber = 'T0005';
+commit;
+
+select * from top;
