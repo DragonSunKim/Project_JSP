@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@700&display=swap" rel="stylesheet">
 <style>
 	body{
@@ -13,22 +14,36 @@
 </style>
 </head>
 <body>
+
 <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
       <a href="index.jsp" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
         <img src="logo/Logo.JPG" width="60" height="60">
         <span class="fs-4">용선 쇼핑몰</span>
       </a>
-
+      
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="top.jsp" class="nav-link" aria-current="page">TOP</a></li>
         <li class="nav-item"><a href="#" class="nav-link">OUTER</a></li>
         <li class="nav-item"><a href="#" class="nav-link">PANTS</a></li>
         <li class="nav-item"><a href="#" class="nav-link">SHOES</a></li>
         <li class="nav-item"><a href="#" class="nav-link">ACC</a></li>
-        <button type="button" class="btn btn-primary" onclick="location.href='signin.jsp'">LOGIN</button>
+        <%
+        	if(session.getAttribute("sessionID") == null){
+        		%>
+        		<button type="button" class="btn btn-primary" onclick="location.href='signin.jsp'">LOGIN</button>
+        		<%
+        	}
+        	else{
+        		%>
+        		<button type="button" class="btn btn-primary" onclick="location.href='logoutAction.jsp'">LOGOUT</button>
+        		<%
+        	}
+        %>
+        
       </ul>
     </header>
   </div>
+<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

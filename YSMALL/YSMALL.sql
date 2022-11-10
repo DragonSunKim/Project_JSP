@@ -16,3 +16,6 @@ delete from top where topNumber = 'T0005';
 commit;
 
 select * from top;
+
+
+

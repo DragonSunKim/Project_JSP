@@ -8,7 +8,6 @@
 <head>
 <meta charset="UTF-8">
 <title>top page</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
@@ -61,6 +60,5 @@
 		</div>
 	</div>
 
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>

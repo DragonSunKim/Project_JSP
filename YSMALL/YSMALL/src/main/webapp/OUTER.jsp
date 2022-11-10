@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>outer Page</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>

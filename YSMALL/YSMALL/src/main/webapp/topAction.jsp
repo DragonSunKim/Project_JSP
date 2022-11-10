@@ -7,7 +7,6 @@
 <head>
 <meta charset="UTF-8">
 <title>topAction Page</title>
-<link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
@@ -65,29 +64,30 @@
 			    </tr>
 			  </tbody>
 			</table>
-			<div class="border-bottom border-primary">
+			
+			<div class="border-bottom border-primary m-4">
 			</div>
-
-<!-- 왜 안돼 시발 -->			
-			<div class="dropdown m-4">
-			  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-			    Dropdown button
-			  </button>
-			  <ul class="dropdown-menu">
-			    <li><a class="dropdown-item" href="#">Action</a></li>
-			    <li><a class="dropdown-item" href="#">Another action</a></li>
-			    <li><a class="dropdown-item" href="#">Something else here</a></li>
-			  </ul>
-			</div>
-
-
-			<div class="d-grid m-6">
-				<button class="btn btn-primary type="button">주문하기</button>
-			</div>
-		</div>
+			<form method="post" action="orderAction.jsp">
+				<div class = "container">
+				<div class= "row">
+					<div class = "text-center col">
+						<select class="form-select" name="size">
+							<option selected>Size</option>
+							<option value="M">M</option>
+							<option value="L">L</option>
+							<option value="XL">XL</option>
+						</select>
+					</div>
+		
+					<div class="col">
+						<button class="btn btn-primary" type="submit">주문하기</button>
+					</div>
+				</div>
+				</div>
+			</form>
 	</div>
 </div>
 
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
 </body>
 </html>
