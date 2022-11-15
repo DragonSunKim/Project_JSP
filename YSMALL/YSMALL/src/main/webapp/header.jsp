@@ -25,9 +25,9 @@
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="top.jsp" class="nav-link" aria-current="page">TOP</a></li>
         <li class="nav-item"><a href="outer.jsp" class="nav-link">OUTER</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">PANTS</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">SHOES</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">ACC</a></li>
+        <li class="nav-item"><a href="pants.jsp" class="nav-link">PANTS</a></li>
+        <li class="nav-item"><a href="shoes.jsp" class="nav-link">SHOES</a></li>
+        <li class="nav-item"><a href="acc.jsp" class="nav-link">ACC</a></li>
         <%
         	if(session.getAttribute("sessionID") == null){
         		%>

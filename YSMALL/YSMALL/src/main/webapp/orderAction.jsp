@@ -4,9 +4,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>orderAction Page</title>
 </head>
 <body>
+<%
+	if(session.getAttribute("sessionID") == null){
+		response.sendRedirect("signin.jsp");
+	}
 
+/* 	request.setCharacterEncoding("UTF-8");
+	Connection conn;
+	PreparedStatement psmt;
+	ResultSet rs;
+
+	String size = request.getParameter("size"); */
+	
+	
+%>
 </body>
 </html>

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>outer Page</title>
+<title>shoes Page</title>
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
@@ -18,34 +18,34 @@
 	PreparedStatement psmt;
 	ResultSet rs;
 	
-	String outerNumber;
-	String outerBrand;
-	String outerName;
-	String outerPrice;
+	String shoesNumber;
+	String shoesBrand;
+	String shoesName;
+	String shoesPrice;
 	
 	try{
 		conn = DatabaseUtil.getConnection();
 		
-		String sql = "SELECT * FROM outer";
+		String sql = "SELECT * FROM shoes";
 		psmt = conn.prepareStatement(sql);
 		rs = psmt.executeQuery();
 		
 		while(rs.next()){
-			outerNumber = rs.getString("outerNumber");
-			outerBrand = rs.getString("outerBrand");
-			outerName = rs.getString("outerName");
-			outerPrice = rs.getString("outerPrice");
+			shoesNumber = rs.getString("shoesNumber");
+			shoesBrand = rs.getString("shoesBrand");
+			shoesName = rs.getString("shoesName");
+			shoesPrice = rs.getString("shoesPrice");
 	
 %>
 			<div class="col-2">
 				<div class="card" style="width: 18rem;">
-					<a href="outerAction.jsp?outerNumber=<%= outerNumber %>">
-			  			<img src="outer/<%= outerNumber %>.JPG" class="card-img-top" alt="...">
+					<a href="shoesAction.jsp?shoesNumber=<%= shoesNumber %>">
+			  			<img src="shoes/<%= shoesNumber %>.JPG" class="card-img-top" alt="...">
 			  		</a>
 			  		<div class="card-body">
-			    		<h5 class="card-title"><%= outerBrand %></h5>
-				    	<p class="card-text"><%= outerName %></p>
-				    	<p class="card-text text-primary"><%= outerPrice %>원</p>
+			    		<h5 class="card-title"><%= shoesBrand %></h5>
+				    	<p class="card-text"><%= shoesName %></p>
+				    	<p class="card-text text-primary"><%= shoesPrice %>원</p>
 			  		</div>
 				</div>
 			</div>

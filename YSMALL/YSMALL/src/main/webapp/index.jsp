@@ -23,7 +23,7 @@
 		<%
 	}
 %>
-
+	<!-- top -->
 	<div class="row">
 	<div class="h4 text-center pb-2 mb-4 text-primary border-top border-bottom border-primary col">
 	  TOP
@@ -37,35 +37,35 @@
 	PreparedStatement psmt;
 	ResultSet rs;
 	
-	String topNumber;
-	String topBrand;
-	String topName;
-	String topPrice;
+	String productNumber;
+	String productBrand;
+	String productName;
+	String productPrice;
 	
 	try{
 		conn = DatabaseUtil.getConnection();
 		
-		String sql = "SELECT * FROM top";
+		String sql = "SELECT * FROM product where productNumber like 'T%'";
 		psmt = conn.prepareStatement(sql);
 		rs = psmt.executeQuery();
 		
 		for(int i=0; i<6; i++){
 			rs.next();
-			topNumber = rs.getString("topNumber");
-			topBrand = rs.getString("topBrand");
-			topName = rs.getString("topName");
-			topPrice = rs.getString("topPrice");
+			productNumber = rs.getString("productNumber");
+			productBrand = rs.getString("ProductBrand");
+			productName = rs.getString("productName");
+			productPrice = rs.getString("productPrice");
 	
 %>
 			<div class="col-2">
 				<div class="card" style="width: 18rem;">
-					<a href="topAction.jsp?topNumber=<%= topNumber %>">
-			  			<img src="top/<%= topNumber %>.JPG" class="card-img-top" alt="...">
+					<a href="productAction.jsp?productNumber=<%= productNumber %>">
+			  			<img src="product/<%= productNumber %>.JPG" class="card-img-top" alt="...">
 			  		</a>
 			  		<div class="card-body">
-			    		<h5 class="card-title"><%= topBrand %></h5>
-				    	<p class="card-text"><%= topName %></p>
-				    	<p class="card-text text-primary"><%= topPrice %>원</p>
+			    		<h5 class="card-title"><%= productBrand %></h5>
+				    	<p class="card-text"><%= productName %></p>
+				    	<p class="card-text text-primary"><%= productPrice %>원</p>
 			  		</div>
 				</div>
 			</div>
@@ -80,6 +80,7 @@
 		</div>
 	</div>
 	
+	<!-- outer -->
 	<div class="row">
 	<div class="h4 text-center pb-2 mb-4 text-primary border-top border-bottom border-primary col m-4">
 	  OUTER
@@ -90,37 +91,31 @@
 	<div class="row">
 <%
 
-
-	
-	String outerNumber;
-	String outerBrand;
-	String outerName;
-	String outerPrice;
 	
 	try{
 		conn = DatabaseUtil.getConnection();
 		
-		String sql = "SELECT * FROM outer";
+		String sql = "SELECT * FROM product where productNumber like 'O%'";
 		psmt = conn.prepareStatement(sql);
 		rs = psmt.executeQuery();
 		
 		for(int i=0; i<6; i++){
 			rs.next();
-			outerNumber = rs.getString("outerNumber");
-			outerBrand = rs.getString("outerBrand");
-			outerName = rs.getString("outerName");
-			outerPrice = rs.getString("outerPrice");
+			productNumber = rs.getString("productNumber");
+			productBrand = rs.getString("ProductBrand");
+			productName = rs.getString("productName");
+			productPrice = rs.getString("productPrice");
 	
 %>
 			<div class="col-2">
 				<div class="card" style="width: 18rem;">
-					<a href="topAction.jsp?topNumber=<%= outerNumber %>">
-			  			<img src="outer/<%= outerNumber %>.JPG" class="card-img-top" alt="...">
+					<a href="productAction.jsp?productNumber=<%= productNumber %>">
+			  			<img src="product/<%= productNumber %>.JPG" class="card-img-top" alt="...">
 			  		</a>
 			  		<div class="card-body">
-			    		<h5 class="card-title"><%= outerBrand %></h5>
-				    	<p class="card-text"><%= outerName %></p>
-				    	<p class="card-text text-primary"><%= outerPrice %>원</p>
+			    		<h5 class="card-title"><%= productBrand %></h5>
+				    	<p class="card-text"><%= productName %></p>
+				    	<p class="card-text text-primary"><%= productPrice %>원</p>
 			  		</div>
 				</div>
 			</div>
@@ -134,6 +129,157 @@
 			%>
 		</div>
 	</div>
-</div>
+
+<!-- pants -->
+	<div class="row">
+	<div class="h4 text-center pb-2 mb-4 text-primary border-top border-bottom border-primary col m-4">
+	  PANTS
+	</div>
+	</div>
+	
+	<div class="container">
+	<div class="row">
+<%
+
+	
+	try{
+		conn = DatabaseUtil.getConnection();
+		
+		String sql = "SELECT * FROM product where productNumber like 'P%'";
+		psmt = conn.prepareStatement(sql);
+		rs = psmt.executeQuery();
+		
+		for(int i=0; i<6; i++){
+			rs.next();
+			productNumber = rs.getString("productNumber");
+			productBrand = rs.getString("ProductBrand");
+			productName = rs.getString("productName");
+			productPrice = rs.getString("productPrice");
+	
+%>
+			<div class="col-2">
+				<div class="card" style="width: 18rem;">
+					<a href="productAction.jsp?productNumber=<%= productNumber %>">
+			  			<img src="product/<%= productNumber %>.JPG" class="card-img-top" alt="...">
+			  		</a>
+			  		<div class="card-body">
+			    		<h5 class="card-title"><%= productBrand %></h5>
+				    	<p class="card-text"><%= productName %></p>
+				    	<p class="card-text text-primary"><%= productPrice %>원</p>
+			  		</div>
+				</div>
+			</div>
+			<div class="col-2">
+			</div>
+			<%
+		} 
+	}catch(Exception e){
+			e.printStackTrace();
+		}
+			%>
+		</div>
+	</div>
+	
+	
+	<!-- shoes -->
+	<div class="row">
+	<div class="h4 text-center pb-2 mb-4 text-primary border-top border-bottom border-primary col m-4">
+	  SHOES
+	</div>
+	</div>
+	
+	<div class="container">
+	<div class="row">
+<%
+
+	
+	try{
+		conn = DatabaseUtil.getConnection();
+		
+		String sql = "SELECT * FROM product where productNumber like 'S%'";
+		psmt = conn.prepareStatement(sql);
+		rs = psmt.executeQuery();
+		
+		for(int i=0; i<6; i++){
+			rs.next();
+			productNumber = rs.getString("productNumber");
+			productBrand = rs.getString("ProductBrand");
+			productName = rs.getString("productName");
+			productPrice = rs.getString("productPrice");
+	
+%>
+			<div class="col-2">
+				<div class="card" style="width: 18rem;">
+					<a href="productAction.jsp?productNumber=<%= productNumber %>">
+			  			<img src="product/<%= productNumber %>.JPG" class="card-img-top" alt="...">
+			  		</a>
+			  		<div class="card-body">
+			    		<h5 class="card-title"><%= productBrand %></h5>
+				    	<p class="card-text"><%= productName %></p>
+				    	<p class="card-text text-primary"><%= productPrice %>원</p>
+			  		</div>
+				</div>
+			</div>
+			<div class="col-2">
+			</div>
+			<%
+		} 
+	}catch(Exception e){
+			e.printStackTrace();
+		}
+			%>
+		</div>
+	</div>
+	
+	
+		<!-- acc -->
+	<div class="row">
+	<div class="h4 text-center pb-2 mb-4 text-primary border-top border-bottom border-primary col m-4">
+	  ACC
+	</div>
+	</div>
+	
+	<div class="container">
+	<div class="row">
+<%
+
+	
+	try{
+		conn = DatabaseUtil.getConnection();
+		
+		String sql = "SELECT * FROM product where productNumber like 'A%'";
+		psmt = conn.prepareStatement(sql);
+		rs = psmt.executeQuery();
+		
+		for(int i=0; i<6; i++){
+			rs.next();
+			productNumber = rs.getString("productNumber");
+			productBrand = rs.getString("ProductBrand");
+			productName = rs.getString("productName");
+			productPrice = rs.getString("productPrice");
+	
+%>
+			<div class="col-2">
+				<div class="card" style="width: 18rem;">
+					<a href="productAction.jsp?productNumber=<%= productNumber %>">
+			  			<img src="product/<%= productNumber %>.JPG" class="card-img-top" alt="...">
+			  		</a>
+			  		<div class="card-body">
+			    		<h5 class="card-title"><%= productBrand %></h5>
+				    	<p class="card-text"><%= productName %></p>
+				    	<p class="card-text text-primary"><%= productPrice %>원</p>
+			  		</div>
+				</div>
+			</div>
+			<div class="col-2">
+			</div>
+			<%
+		} 
+	}catch(Exception e){
+			e.printStackTrace();
+		}
+			%>
+		</div>
+	</div>
 </body>
 </html>
