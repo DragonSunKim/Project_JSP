@@ -77,7 +77,7 @@
 			
 			<div class="border-bottom border-primary m-4">
 			</div>
-			<form method="post" action="orderAction.jsp">
+			<form method="post" action="orderAction.jsp?productNumber=<%= productNumber %>">
 				<div class = "container">
 				<div class= "row">
 					<div class = "text-center col">

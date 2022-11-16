@@ -18,34 +18,34 @@
 	PreparedStatement psmt;
 	ResultSet rs;
 	
-	String topNumber;
-	String topBrand;
-	String topName;
-	String topPrice;
+	String productNumber;
+	String productBrand;
+	String productName;
+	String productPrice;
 	
 	try{
 		conn = DatabaseUtil.getConnection();
 		
-		String sql = "SELECT * FROM top";
+		String sql = "SELECT * FROM product where productNumber like 'T%'";
 		psmt = conn.prepareStatement(sql);
 		rs = psmt.executeQuery();
 		
 		while(rs.next()){
-			topNumber = rs.getString("topNumber");
-			topBrand = rs.getString("topBrand");
-			topName = rs.getString("topName");
-			topPrice = rs.getString("topPrice");
+			productNumber = rs.getString("productNumber");
+			productBrand = rs.getString("productBrand");
+			productName = rs.getString("productName");
+			productPrice = rs.getString("productPrice");
 	
 %>
 			<div class="col-2">
 				<div class="card" style="width: 18rem;">
-					<a href="topAction.jsp?topNumber=<%= topNumber %>">
-			  			<img src="top/<%= topNumber %>.JPG" class="card-img-top" alt="...">
+					<a href="productAction.jsp?productNumber=<%= productNumber %>">
+			  			<img src="product/<%= productNumber %>.JPG" class="card-img-top" alt="...">
 			  		</a>
 			  		<div class="card-body">
-			    		<h5 class="card-title"><%= topBrand %></h5>
-				    	<p class="card-text"><%= topName %></p>
-				    	<p class="card-text text-primary"><%= topPrice %>원</p>
+			    		<h5 class="card-title"><%= productBrand %></h5>
+				    	<p class="card-text"><%= productName %></p>
+				    	<p class="card-text text-primary"><%= productPrice %>원</p>
 			  		</div>
 				</div>
 			</div>

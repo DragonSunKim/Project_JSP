@@ -2,15 +2,15 @@
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>outer Page</title>
+<title>outer page</title>
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
-
 	<div class="container">
 		<div class="row">
 <%
@@ -18,34 +18,34 @@
 	PreparedStatement psmt;
 	ResultSet rs;
 	
-	String outerNumber;
-	String outerBrand;
-	String outerName;
-	String outerPrice;
+	String productNumber;
+	String productBrand;
+	String productName;
+	String productPrice;
 	
 	try{
 		conn = DatabaseUtil.getConnection();
 		
-		String sql = "SELECT * FROM outer";
+		String sql = "SELECT * FROM product where productNumber like 'O%'";
 		psmt = conn.prepareStatement(sql);
 		rs = psmt.executeQuery();
 		
 		while(rs.next()){
-			outerNumber = rs.getString("outerNumber");
-			outerBrand = rs.getString("outerBrand");
-			outerName = rs.getString("outerName");
-			outerPrice = rs.getString("outerPrice");
+			productNumber = rs.getString("productNumber");
+			productBrand = rs.getString("productBrand");
+			productName = rs.getString("productName");
+			productPrice = rs.getString("productPrice");
 	
 %>
 			<div class="col-2">
 				<div class="card" style="width: 18rem;">
-					<a href="outerAction.jsp?outerNumber=<%= outerNumber %>">
-			  			<img src="outer/<%= outerNumber %>.JPG" class="card-img-top" alt="...">
+					<a href="productAction.jsp?productNumber=<%= productNumber %>">
+			  			<img src="product/<%= productNumber %>.JPG" class="card-img-top" alt="...">
 			  		</a>
 			  		<div class="card-body">
-			    		<h5 class="card-title"><%= outerBrand %></h5>
-				    	<p class="card-text"><%= outerName %></p>
-				    	<p class="card-text text-primary"><%= outerPrice %>원</p>
+			    		<h5 class="card-title"><%= productBrand %></h5>
+				    	<p class="card-text"><%= productName %></p>
+				    	<p class="card-text text-primary"><%= productPrice %>원</p>
 			  		</div>
 				</div>
 			</div>

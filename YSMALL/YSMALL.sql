@@ -100,6 +100,8 @@ constraint fk_pn foreign key(ProductNumber) references product(productNumber),
 constraint fk_ui foreign key(userId) references member(id)
 );
 select * from orderTable;
+delete from orderTable where orderNumber=2;
+commit;
 --
 select * from acc;
 

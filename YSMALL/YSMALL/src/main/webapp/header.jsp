@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>header</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@700&display=swap" rel="stylesheet">
 <style>
@@ -36,7 +36,8 @@
         	}
         	else{
         		%>
-        		<button type="button" class="btn btn-primary" onclick="location.href='logoutAction.jsp'">LOGOUT</button>
+        		<button type="button" class="btn btn-primary m-2" onclick="location.href='logoutAction.jsp'">LOGOUT</button>
+        		<button type="button" class="btn btn-primary m-2" onclick="location.href='myPage.jsp'">MyPage</button>
         		<%
         	}
         %>

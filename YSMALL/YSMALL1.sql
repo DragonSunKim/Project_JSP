@@ -9,5 +9,5 @@ phone3 varchar2(4)
 );
 drop table member;
 select * from member;
-
+delete from member where id='kys';
 commit;
