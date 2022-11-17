@@ -100,7 +100,7 @@ constraint fk_pn foreign key(ProductNumber) references product(productNumber),
 constraint fk_ui foreign key(userId) references member(id)
 );
 select * from orderTable;
-delete from orderTable where orderNumber=2;
+delete from orderTable where orderNumber=1;
 commit;
 --
 select * from acc;
@@ -167,3 +167,16 @@ insert into product values('A0003', 'CPGN STUDIO', '헤리티지 체크 머플러 챠콜', 
 insert into product values('A0004', 'CPGN STUDIO', '헤리티지 체크 머플러 베이지', 38000);
 insert into product values('A0005', 'TIERUST ', '슬림 스트라이프 니트 넥타이', 25000);
 insert into product values('A0006', 'STANDARD', '실크 레지멘탈 타이 [네이비]', 23900);
+
+
+-- 
+select * from member;
+select * from product;
+select * from orderTable;
+
+
+
+
+
+
+
